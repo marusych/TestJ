@@ -19,7 +19,7 @@ public class BaseTest {
     @BeforeClass
     public static void setUp() {
 
-        System.setProperty("webdriver.chrome.driver", "src/driver/chromedriverLin");
+        System.setProperty("webdriver.chrome.driver", "src/driver/chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         driver = new ChromeDriver(chromeOptions);
         driver.get("http://stackoverflow.com/");
