@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import pages.stackoverflowMapping.LoginPage;
 import pages.stackoverflowMapping.MainPageStack;
 
@@ -17,7 +18,10 @@ public class BaseTest {
 
     @BeforeClass
     public static void setUp() {
-        driver = new ChromeDriver();
+
+        System.setProperty("webdriver.chrome.driver", "src/driver/chromedriverLin");
+        ChromeOptions chromeOptions = new ChromeOptions();
+        driver = new ChromeDriver(chromeOptions);
         driver.get("http://stackoverflow.com/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
