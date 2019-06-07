@@ -4,8 +4,9 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import pages.stackoverflowMapping.LoginPage;
 import pages.stackoverflowMapping.MainPageStack;
 
@@ -19,9 +20,9 @@ public class BaseTest {
     @BeforeClass
     public static void setUp() {
 
-        System.setProperty("webdriver.chrome.driver", "src/driver/chromedriver.exe");
-        ChromeOptions chromeOptions = new ChromeOptions();
-        driver = new ChromeDriver(chromeOptions);
+        System.setProperty("webdriver.gecko.driver", "src/driver/geckodriverLin");
+        FirefoxOptions options = new FirefoxOptions();
+        driver = new FirefoxDriver(options);
         driver.get("http://stackoverflow.com/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
